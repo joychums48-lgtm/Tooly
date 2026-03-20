@@ -1,14 +1,14 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthy Beginnings - Maternal & Child Health Awareness</title>
+    <title>Amazing Fun Facts - Learn Something New Every Day!</title>
     
-    <!-- Google Fonts Import -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -20,241 +20,125 @@
         }
 
         :root {
-            /* Light Mode Colors */
-            --primary-color: #FF6B9D;
-            --secondary-color: #FFA07A;
-            --accent-color: #87CEEB;
-            --dark-text: #333333;
-            --light-text: #666666;
-            --light-bg: #FFFFFF;
-            --light-border: #E8E8E8;
-            --success-color: #4CAF50;
-            
-            /* Dark Mode Colors */
-            --dark-bg: #1a1a1a;
-            --dark-card: #2a2a2a;
-            --dark-text-light: #E8E8E8;
-            --dark-border: #404040;
+            --primary-purple: #8B5CF6;
+            --secondary-pink: #EC4899;
+            --accent-blue: #06B6D4;
+            --dark-bg: #0F172A;
+            --card-bg: #1E293B;
+            --light-text: #E2E8F0;
+            --gold: #FBBF24;
+            --green: #10B981;
+            --orange: #F97316;
+            --red: #EF4444;
         }
 
-        /* Light Mode (Default) */
         body {
-            font-family: 'Nunito', sans-serif;
-            color: var(--dark-text);
-            background-color: var(--light-bg);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a3e 50%, var(--dark-bg) 100%);
+            color: var(--light-text);
             line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
             overflow-x: hidden;
+            min-height: 100vh;
+            scroll-behavior: smooth;
         }
 
-        /* Dark Mode */
-        body.dark-mode {
-            background-color: var(--dark-bg);
-            color: var(--dark-text-light);
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
 
-        body.dark-mode .navbar {
-            background-color: var(--dark-card);
-            border-bottom: 1px solid var(--dark-border);
-        }
-
-        body.dark-mode .card {
-            background-color: var(--dark-card);
-            border: 1px solid var(--dark-border);
-        }
-
-        body.dark-mode .section {
-            background-color: var(--dark-bg);
-        }
-
-        body.dark-mode .hero {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-        }
-
-        body.dark-mode input,
-        body.dark-mode textarea {
-            background-color: var(--dark-card);
-            color: var(--dark-text-light);
-            border-color: var(--dark-border);
-        }
-
-        body.dark-mode footer {
-            background-color: var(--dark-card);
-            border-top: 1px solid var(--dark-border);
-        }
-
-        /* ==================== NAVBAR ==================== */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: var(--light-bg);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* ==================== HEADER / NAVBAR ==================== */
+        header {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid rgba(139, 92, 246, 0.3);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            list-style: none;
-            gap: 2rem;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-text);
-            font-weight: 600;
-            transition: color 0.3s ease;
-            position: relative;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Fredoka', sans-serif;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        body.dark-mode .nav-links a {
-            color: var(--dark-text-light);
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            transition: width 0.3s ease;
+        .logo i {
+            font-size: 2rem;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
         }
 
-        /* Theme Toggle Button */
-        .theme-toggle {
-            background: none;
+        .theme-toggle, .filter-btn {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink));
             border: none;
-            font-size: 1.5rem;
+            color: white;
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .theme-toggle:hover {
-            transform: scale(1.2) rotate(20deg);
+        .theme-toggle:hover, .filter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
         }
 
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--primary-color);
-            transition: 0.3s ease;
+        .theme-toggle:active, .filter-btn:active {
+            transform: translateY(-1px);
         }
 
         /* ==================== HERO SECTION ==================== */
         .hero {
-            background: linear-gradient(135deg, #FFE5EC 0%, #E0F7FF 100%);
-            padding: 100px 2rem;
+            padding: 80px 2rem 60px;
             text-align: center;
-            animation: fadeIn 0.8s ease-in;
+            animation: fadeInDown 0.8s ease-out;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--light-text);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        body.dark-mode .hero p {
-            color: #AAA;
-        }
-
-        .hero .cta-button {
-            padding: 15px 40px;
-            font-size: 1rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
-        }
-
-        .hero .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.6);
-        }
-
-        /* ==================== SECTIONS ==================== */
-        .section {
-            padding: 80px 2rem;
-            background-color: var(--light-bg);
-            transition: background-color 0.3s ease;
-        }
-
-        .section:nth-child(even) {
-            background-color: #F9F9F9;
-        }
-
-        body.dark-mode .section:nth-child(even) {
-            background-color: #222;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            font-family: 'Poppins', sans-serif;
-            position: relative;
-            animation: slideInDown 0.6s ease;
-        }
-
-        @keyframes slideInDown {
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
                 transform: translateY(-30px);
@@ -265,34 +149,16 @@
             }
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            margin: 1rem auto 0;
-            border-radius: 2px;
-        }
-
-        /* ==================== CARDS ==================== */
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: var(--light-bg);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            animation: slideInUp 0.6s ease;
-            border: 1px solid var(--light-border);
+        .hero h1 {
+            font-size: 4rem;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink), var(--accent-blue), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 0.8s ease-out;
         }
 
         @keyframes slideInUp {
@@ -306,215 +172,398 @@
             }
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        .hero p {
+            font-size: 1.3rem;
+            color: #CBD5E1;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 0.8s ease-out 0.3s both;
         }
 
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
         }
 
-        .card p {
-            color: var(--light-text);
-            line-height: 1.8;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink));
+            color: white;
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
         }
 
-        body.dark-mode .card p {
-            color: #AAA;
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
         }
 
-        /* ==================== TIPS SECTION ==================== */
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ==================== FILTER SECTION ==================== */
+        .filter-section {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 40px 2rem;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+        .filter-tag {
+            padding: 8px 16px;
+            background: rgba(139, 92, 246, 0.2);
+            border: 2px solid var(--primary-purple);
+            color: var(--accent-blue);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-tag:hover, .filter-tag.active {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink));
+            color: white;
+            border-color: var(--secondary-pink);
+            transform: scale(1.05);
+        }
+
+        /* ==================== FACTS GRID ==================== */
+        .facts-container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .tip-card {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
             padding: 2rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            animation: slideInUp 0.6s ease;
         }
 
-        .tip-card:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
-        .tip-card h4 {
+        /* ==================== FACT CARD ==================== */
+        .fact-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.5));
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            animation: scaleIn 0.6s ease-out forwards;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fact-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--secondary-pink);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .fact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .fact-card:hover::before {
+            top: -10%;
+            right: -10%;
+        }
+
+        .fact-card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .fact-category {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink));
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-category.science {
+            background: linear-gradient(135deg, var(--accent-blue), var(--green));
+        }
+
+        .fact-category.history {
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+        }
+
+        .fact-category.nature {
+            background: linear-gradient(135deg, var(--green), #06B6D4);
+        }
+
+        .fact-category.space {
+            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+        }
+
+        .fact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .fact-card:nth-child(2) .fact-icon {
+            animation-delay: 0.2s;
+        }
+
+        .fact-card:nth-child(3) .fact-icon {
+            animation-delay: 0.4s;
+        }
+
+        .fact-card:nth-child(4) .fact-icon {
+            animation-delay: 0.6s;
+        }
+
+        .fact-title {
             font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #F1F5F9;
+            font-family: 'Fredoka', sans-serif;
         }
 
-        .tip-card p {
-            font-size: 0.95rem;
-            opacity: 0.95;
-        }
-
-        /* ==================== CONTACT FORM ==================== */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            animation: slideInUp 0.8s ease;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark-text);
-        }
-
-        body.dark-mode .form-group label {
-            color: var(--dark-text-light);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid var(--light-border);
-            border-radius: 8px;
-            font-family: 'Nunito', sans-serif;
+        .fact-text {
             font-size: 1rem;
-            transition: all 0.3s ease;
-            background-color: var(--light-bg);
-            color: var(--dark-text);
+            color: #CBD5E1;
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(255, 107, 157, 0.2);
+        .fact-source {
+            font-size: 0.85rem;
+            color: #64748B;
+            font-style: italic;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+        .fact-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
         }
 
-        .submit-button {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .fact-rating span {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .star {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== LOAD MORE BUTTON ==================== */
+        .load-more-container {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .load-more-btn {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink));
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
         }
 
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        .load-more-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
+        }
+
+        .load-more-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         /* ==================== FOOTER ==================== */
         footer {
-            background-color: var(--dark-card);
-            color: var(--dark-text-light);
-            text-align: center;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+            border-top: 2px solid rgba(139, 92, 246, 0.3);
             padding: 3rem 2rem;
-            border-top: 2px solid var(--light-border);
-            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: 4rem;
+            animation: slideInUp 0.8s ease-out;
         }
 
-        body.dark-mode footer {
-            border-top: 2px solid var(--dark-border);
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: #CBD5E1;
+            margin-bottom: 1rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin: 1.5rem 0;
         }
 
-        .social-links a {
+        .social-link {
             display: inline-flex;
             width: 45px;
             height: 45px;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink));
             color: white;
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .social-links a:hover {
+        .social-link:hover {
             transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
         }
 
-        .quote {
+        .footer-quote {
             font-style: italic;
-            margin-top: 1.5rem;
-            color: var(--light-text);
-            font-size: 1rem;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            border-left: 4px solid var(--secondary-pink);
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        body.dark-mode .quote {
-            color: #AAA;
+        /* ==================== MODAL STYLES ==================== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
         }
 
-        .copyright {
-            margin-top: 1rem;
-            opacity: 0.8;
-            font-size: 0.9rem;
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, var(--card-bg), #1a2a3a);
+            border: 2px solid var(--primary-purple);
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            animation: slideInUp 0.3s ease;
+        }
+
+        .modal-close {
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #CBD5E1;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--secondary-pink);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #F1F5F9;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .modal-text {
+            color: #CBD5E1;
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
         /* ==================== RESPONSIVE DESIGN ==================== */
         @media (max-width: 768px) {
-            /* Navbar */
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background-color: var(--light-bg);
-                padding: 1rem 2rem;
-                gap: 1rem;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            .logo {
+                font-size: 1.3rem;
             }
 
-            .nav-links.active {
-                display: flex;
-            }
-
-            body.dark-mode .nav-links {
-                background-color: var(--dark-card);
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            /* Hero */
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -523,223 +572,139 @@
                 font-size: 1rem;
             }
 
-            /* Sections */
-            .section {
-                padding: 60px 1.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            /* Cards */
-            .cards-container {
+            .facts-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
 
-            /* Contact Form */
-            .contact-form {
-                padding: 0 1rem;
+            .filter-section {
+                margin: 30px 1rem;
+            }
+
+            .hero-buttons {
+                gap: 0.5rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .nav-buttons {
+                gap: 0.5rem;
+            }
+
+            .theme-toggle, .filter-btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
-            /* Navbar */
-            .navbar {
+            header {
                 padding: 1rem;
             }
 
-            .logo {
-                font-size: 1.3rem;
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            /* Hero */
+            .logo {
+                font-size: 1.1rem;
+            }
+
             .hero {
-                padding: 60px 1rem;
+                padding: 40px 1rem 30px;
             }
 
             .hero h1 {
-                font-size: 2rem;
-            }
-
-            /* Sections */
-            .section {
-                padding: 40px 1rem;
-            }
-
-            .section-title {
                 font-size: 1.8rem;
             }
 
-            .card {
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .facts-container {
+                padding: 1rem;
+            }
+
+            .fact-card {
                 padding: 1.5rem;
             }
 
-            .card-icon {
-                font-size: 2.5rem;
+            .fact-title {
+                font-size: 1.1rem;
+            }
+
+            .fact-text {
+                font-size: 0.9rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                width: 95%;
+            }
+
+            .filter-section {
+                margin: 20px 0.5rem;
+            }
+
+            .filter-tag {
+                padding: 6px 12px;
+                font-size: 0.85rem;
             }
         }
 
-        /* ==================== UTILITY CLASSES ==================== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        /* ==================== SCROLLBAR STYLING ==================== */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
 
-        /* Smooth Scroll Behavior */
-        html {
-            scroll-behavior: smooth;
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-pink));
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--secondary-pink), var(--accent-blue));
+        }
+
+        /* ==================== UTILITY CLASSES ==================== */
+        .hidden {
+            display: none !important;
         }
     </style>
 </head>
 <body>
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="navbar">
-        <div class="logo">🤰 Healthy Beginnings</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#nutrition">Nutrition</a></li>
-            <li><a href="#tips">Tips</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
-            <i class="fas fa-moon"></i>
-        </button>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-lightbulb"></i> Fun Facts Central
+            </div>
+            <div class="nav-buttons">
+                <button class="filter-btn" onclick="openFilterModal()">
+                    <i class="fas fa-filter"></i> Filter
+                </button>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero" id="home">
-        <h1>Caring for You and Your Little One</h1>
-        <p>Welcome to Healthy Beginnings, your trusted guide for maternal and child health. Discover essential nutrition tips, wellness advice, and expert guidance to ensure a healthy journey from pregnancy through early childhood.</p>
-        <button class="cta-button" onclick="document.getElementById('nutrition').scrollIntoView();">Learn More</button>
-    </section>
-
-    <!-- ==================== NUTRITION TIPS SECTION ==================== -->
-    <section class="section" id="nutrition">
-        <h2 class="section-title">💚 Nutrition Tips for Health & Development</h2>
-        <div class="cards-container">
-            <!-- Card 1: Balanced Diet -->
-            <div class="card">
-                <div class="card-icon">🥗</div>
-                <h3>Balanced Diet Essentials</h3>
-                <p>A nutritious diet during pregnancy and childhood is crucial. Include proteins, healthy fats, carbohydrates, vitamins, and minerals. Opt for whole grains, lean proteins, fresh fruits, and vegetables daily.</p>
-            </div>
-
-            <!-- Card 2: Hydration -->
-            <div class="card">
-                <div class="card-icon">💧</div>
-                <h3>Stay Hydrated</h3>
-                <p>Drink at least 8-10 glasses of water daily. Proper hydration supports milk production for breastfeeding mothers and aids digestion in children. Avoid excess caffeine and sugary drinks.</p>
-            </div>
-
-            <!-- Card 3: Vitamins & Minerals -->
-            <div class="card">
-                <div class="card-icon">💊</div>
-                <h3>Important Vitamins</h3>
-                <p>Folic acid, iron, calcium, and vitamin D are essential. These support fetal development, bone health, and immune function. Consult your doctor about prenatal vitamins and supplements.</p>
-            </div>
-
-            <!-- Card 4: Iron-Rich Foods -->
-            <div class="card">
-                <div class="card-icon">🥩</div>
-                <h3>Iron-Rich Foods</h3>
-                <p>Iron prevents anemia and supports oxygen delivery. Include spinach, red meat, beans, lentils, and fortified cereals. Pair with vitamin C sources for better iron absorption.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== HEALTH TIPS SECTION ==================== -->
-    <section class="section" id="tips">
-        <h2 class="section-title">✨ Daily Health Tips & Wellness</h2>
-        <div class="tips-grid">
-            <!-- Tip 1: Exercise -->
-            <div class="tip-card">
-                <h4>🏃‍♀️ Stay Active</h4>
-                <p>Regular exercise (30 mins/day) boosts mood, energy, and sleep quality. Safe activities include walking, swimming, and prenatal yoga. Always consult your healthcare provider first.</p>
-            </div>
-
-            <!-- Tip 2: Sleep -->
-            <div class="tip-card">
-                <h4>😴 Prioritize Sleep</h4>
-                <p>7-9 hours of quality sleep is vital for maternal health and child development. Create a relaxing bedtime routine, keep your room cool and dark, and avoid screens before bed.</p>
-            </div>
-         <!-- Tip 3: Mental Health -->
-            <div class="tip-card">
-                <h4>🧘‍♀️ Mental Wellness</h4>
-                <p>Take time to relax, practice mindfulness, and manage stress. Meditation, deep breathing, or journaling can improve mood and resilience for both mother and child.</p>
-            </div>
-
-            <!-- Tip 4: Immunity -->
-            <div class="tip-card">
-                <h4>🛡️ Boost Immunity</h4>
-                <p>Eat immune-supporting foods like fruits, vegetables, and yogurt. Stay up-to-date with vaccinations and maintain hygiene to protect yourself and your child.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CONTACT FORM SECTION ==================== -->
-    <section class="section" id="contact">
-        <h2 class="section-title">📩 Get in Touch</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-            </div>
-
-            <button type="submit" class="submit-button">Send Message</button>
-        </form>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <p class="quote">"Every healthy beginning starts with knowledge and care."</p>
-        <p class="copyright">&copy; 2026 Healthy Beginnings. All Rights Reserved.</p>
-    </footer>
-
-    <!-- ==================== JAVASCRIPT ==================== -->
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const icon = themeToggle.querySelector('i');
-            icon.classList.toggle('fa-moon');
-            icon.classList.toggle('fa-sun');
-        });
-
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('open');
-        });
-    </script>
-</body>
-</html>
-
+    <section class="hero">
+        <h1>🌟 Amazing Fun Facts</h1>
+        <p>Discover fascinating, mind-blowing facts about science, history, nature, and space. Learn something new every day!</p>
+        <div class="hero-buttons">
+            <button class="btn-primary" onclick="randomFact()">
+                <i class="fas fa-shuffle"></i> Random Fact
+            </button>
+            <button class="btn-secondary" on
             <!-- Tip 3: 
